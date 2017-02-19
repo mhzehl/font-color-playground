@@ -72,28 +72,31 @@
     </div>
     <script>
       $(document).ready(function() {
+
+        var canvas = $('#canvas');
+
         $('input[type=radio][name=fontname]').change(function(e) {
-          $('#canvas').css('font-family', e.target.value);
+          canvas.css('font-family', e.target.value);
         })
 
         $('#textcolor').change(function(e) {
-          $('#canvas').css('color', e.target.value);
+          canvas.css('color', e.target.value);
         });
 
         $('#bgcolor').change(function(e) {
-          $('#canvas').css('background-color', e.target.value);
+          canvas.css('background-color', e.target.value);
         });
 
         $('#textsize').change(function(e) {
-          $('#canvas').css('font-size', e.target.value + 'px');
+          canvas.css('font-size', e.target.value + 'px');
         });
 
         $('#lineheight').change(function(e) {
-          $('#canvas').css('line-height', e.target.value);
+          canvas.css('line-height', e.target.value + 'px');
         });
 
         $('#textpadding').change(function(e) {
-          $('#canvas').css('padding', e.target.value);
+          canvas.css('padding', e.target.value);
         });
       });
     </script>

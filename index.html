@@ -62,6 +62,14 @@
           <p>Padding: <input id="textpadding" type="text" name="textpadding" value="10" size="5"></p>
 
         </div>
+        <div class="control">
+          <h2>Extra</h2>
+          <ul>
+            <li><label><input type="checkbox" name="text-decoration" value="underline">Underline</label></li>
+            <li><label><input type="checkbox" name="font-variant" value="small-caps">Toggle small caps</label></li>
+            <li><label><input type="checkbox" name="font-weight" value="bold">Boldify</label></li>
+          </ul>
+        </div>
       </div>
       </form>
 
@@ -77,7 +85,7 @@
 
         $('input[type=radio][name=fontname]').change(function(e) {
           canvas.css('font-family', e.target.value);
-        })
+        });
 
         $('#textcolor').change(function(e) {
           canvas.css('color', e.target.value);
@@ -87,7 +95,7 @@
           canvas.css('background-color', e.target.value);
         });
 
-        $('#textsize').change(function(e) {
+        $('#textsize').keydown(function(e) {
           canvas.css('font-size', e.target.value + 'px');
         });
 
@@ -97,6 +105,19 @@
 
         $('#textpadding').change(function(e) {
           canvas.css('padding', e.target.value);
+        });
+
+        // To do: uncheck
+        $('input[type=checkbox][name=text-decoration]').prop('checked', false).change(function(e){
+          canvas.css('text-decoration', e.target.value);
+        });
+
+        $('input[type=checkbox][name=font-variant]').change(function(e){
+          canvas.css('font-variant', e.target.value);
+        });
+
+        $('input[type=checkbox][name=font-weight]').change(function(e){
+          canvas.css('font-weight', e.target.value);
         });
       });
     </script>

@@ -71,9 +71,9 @@
 
     </div>
     <script>
-      $(document).ready(function() {
+      var canvas = $('#canvas');
 
-        var canvas = $('#canvas');
+      $(document).ready(function() {
 
         $('input[type=radio][name=fontname]').change(function(e) {
           canvas.css('font-family', e.target.value);
